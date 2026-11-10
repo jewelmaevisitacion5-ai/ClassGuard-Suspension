@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLASSGUARD | Student Alerts</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="brand">🛡️ CLASSGUARD</div><span>Student Class Suspension Alerts</span></header>
+<main>
+  <section class="hero">
+    <p class="tag">STAY INFORMED. STAY SAFE.</p>
+    <h1>Class updates, sent directly to you.</h1>
+    <p>Register your contact details to receive class-status updates by email and SMS.</p>
+  </section>
+  <section class="card">
+    <h2>Student Registration</h2>
+    <form id="registerForm">
+      <label>Full name<input name="name" required placeholder="Your full name"></label>
+      <label>Email address<input name="email" type="email" required placeholder="you@example.com"></label>
+      <label>Mobile number<input name="phone" required placeholder="09XXXXXXXXX"></label>
+      <label>City / Municipality<input name="location" required placeholder="Example: Argao, Cebu"></label>
+      <label>Education level
+        <select name="level" required><option value="">Select level</option><option>Elementary</option><option>Junior High School</option><option>Senior High School</option><option>College</option></select>
+      </label>
+      <label class="check"><input name="consent" type="checkbox" required> I agree to receive CLASSGUARD class-status alerts by email and SMS.</label>
+      <button type="submit">Register for Alerts</button>
+    </form>
+    <p id="registerResult" class="result" aria-live="polite"></p>
+  </section>
+  <section class="card info">
+    <h2>How it works</h2>
+    <ol><li>Students register their email, mobile number, and municipality.</li><li>An authorized project administrator reviews weather and class-suspension information.</li><li>The administrator sends an update to registered students in the selected municipality.</li></ol>
+    <p><strong>Important:</strong> This prototype does not automatically read PAGASA advisories or decide whether classes are suspended. PAGASA issues weather information; suspension decisions follow applicable government rules and local official announcements. Always verify with your LGU and school.</p>
+    <p>Official weather information: <a href="https://www.pagasa.dost.gov.ph/" target="_blank" rel="noopener">PAGASA website</a>.</p>
+  </section>
+  <section class="card admin">
+    <h2>Administrator Alert Sender</h2>
+    <p>For demonstration by the project administrator only. Keep the admin key private.</p>
+    <form id="notifyForm">
+      <label>Admin key<input id="adminKey" type="password" required></label>
+      <label>Target municipality<input id="targetLocation" required placeholder="Must match student registration"></label>
+      <label>Class status<select id="status"><option>Suspension confirmed</option><option>No suspension announced</option><option>Decision pending - monitor updates</option></select></label>
+      <label>Advisory details<textarea id="advisory" required rows="4" placeholder="Write the verified update and source here."></textarea></label>
+      <button type="submit">Send Email and SMS</button>
+    </form>
+    <p id="notifyResult" class="result" aria-live="polite"></p>
+  </section>
+</main>
+<footer>CLASSGUARD student project prototype · Do not enter sensitive personal information in a public demo.</footer>
+<script src="app.js"></script>
+</body></html>
